@@ -1,18 +1,14 @@
 #include<iostream>
-#include <stdio.h>
-
+#include "Literal.cpp"
 using namespace std;
-/**
+/*
 Menu de apresentação
 */
 void apresentacaoInicial(){
     cout << "Olá, Bem vindo ao Aprendendo? Lógico!\n\n";
     cout << "Programa Interativo de Aprendizagem e auxilio à assuntos Lógicos\n";
 }
- 
-/**
-Menu de opções no programa
-*/
+
 void menuOpcoes(){
     cout << "\nMENU: \n";
     cout << " 1 - Aprendendo a formular uma Tabela-Verdade!\n";
@@ -22,39 +18,28 @@ void menuOpcoes(){
     cout << " 0 - SAIR\n\n";
     cout << " Digite a sua opção !\n";
 }
- 
-/**
-resumo da funcionalidade tabela
-*/
+
+
 void resumoTabela(){
     cout << "\nA Tabela Verdade é um tipo lógico de tabela utilizado em lógica para considerar a validade de uma fórmula ou conferir que uma combinação está correta.\n";
     cout << "Quer saber como se constrói uma Tabela Verdade?\n";
- 
+
 }
- 
-/**
-parte didática da tabela
-*/
+
 void infoTabela(){
     cout << "\nCOMO CONSTRUIR UMA TABELA?\n\n";
     cout << " a) O número de linhas contidas em uma Tabela Verdade vai ser calculada por Linhas = 2^n, onde (n) é a quantidade de preposições.\n ";
     cout << " b) Incluimos nas linhas valores correspondentes em binário de (0 ... [2^n - 1]). Exemplo: Com uma tabela de 2 preposições teremos 4 linhas, em linha[1] = 0 0, 0 em binário com 2 casas decimais. na linha[2] = 0 1, 1 em binário com 2 casas. linha[3] = 1 0 , linha[4] = 1 1 \n";
-    cout << " c) Enquanto ao número de colunas, vai depender de você, mas temos que ter obrigatoriamente n colunas + 1. Onde n é definido como o número de preposições e 1 coluna de resposta.\n";
+    cout << " c) Enquanto ao número de colunas, vai depender de você, mas temos que ter obrigatoriamente n colunas + 1. Onde n é definido como o número de preposições e 1 coluna de resposta.\n"; 
     cout << " d) Na coluna de resposta, temos o resultado das operações. Cada linha com seu respectivo bit resposta\n";
 }
- 
-/**
-resumo da funcionalidades conversor
-*/
+
 void resumoConversor(){
     cout << "\nO conversor faz a tradução entre números de bases diferentes\n";
     cout << "Convertendo Bin --> Dec, teremos a conversão de Binário (base 2) para Decimal (base 10)\n";
     cout << "Convertendo Dec --> Bin, teremos a conversão de Decimal (base 10) para Binário (base 2)\n";
 }
- 
-/**
-parte didática do conversor
-*/
+
 void infoConversor(){
     cout << "\nCOMO CONVERTER UM NÚMERO?\n\n";
     cout << " 1) De Binário para Décimal\n";
@@ -66,38 +51,26 @@ void infoConversor(){
     cout << "   b) O importante da divisão será o resto da divisão e seu resultado final. Exemplo: o numero 2 em decimal, 2 / 2 = 1 e 2 % 2 = 0\n";
     cout << "   c) Chegando a ultima divisão com resto inteiro possivel, temos que reunir os restos das divisões com o ultimo resultado possivel. Exemplo: 4, 4 % 2 = 0, 4/2 = 2, como 2 ainda pode ser divisivel por 2, 2 % 2 = 0 e 2 / 2 = 1. Juntando os restos com o ultimo resultado, temos:  0 0 1\n";
     cout << "   d) Com o resultado da divisão por 2 e seus restos concatenado, temos que apenas inverter a ordem. Exemplo anterior 0 0 1, invertemos 1 0 0, que equivale a 4\n\n";
-   
+    
 }
- 
-/**
-resumo da funcionalidade de expressões
-*/
+
 void resumoExpressoes(){
     cout << "\nExpressões Proposicionais podem ser gigantes. No entanto, Existem várias regras de simplificações que podem transformar expressões gigantescas em expressões simples com a mesma equivalência lógica!\n";
 }
- 
-/**
-parte didática de expressões
-*/
+
 void infoExpressoes(){
     cout << "\nCOMO SIMPLIFICAR UMA EXPRESSÃO PROPOSICIONAL?\n\n";
     cout << " a) Partimos da definição das proposições\n";
     cout << " b) Assumimos uma regra que se encaixe com as proposições destinadas e aplicamos.\n";
     cout << " c) Repetimos os passos podendo utilizar a mesma regra ou uma regra diferente, até chegarmos a uma expressão que não aceite mais nenhuma regra. Em tese será a expressão simplificada\n";
 }
- 
-/**
-resumo da funcionalidade de Regras
-*/
+
 void resumoRegras(){
   cout << "\nRegras para simplificações de expressões lógicas\n";
   cout << "Aqui vamos apresentar algumas regras para as simplificações de expressões lógicas complexas em expressões simples!\n";
 }
- 
-/**
-Condicionador com todas as opções do menu inicial;
-*/
-void opcoesMenuInicial(int opc){
+
+void resumoOpcoes(int opc){
     switch(opc){
         case(1):
             resumoTabela();
@@ -120,11 +93,9 @@ void opcoesMenuInicial(int opc){
 
 }
 
-int main() {
-    menuOpcoes();
-    int i = 1;
-    do {
-        scanf(" %d", &i);
-       opcoesMenuInicial(i);
-    } while (i != 0);
-    }
+int main_menu_apresentacao() {
+    resumoExpressoes();
+    infoExpressoes();
+    return 0;
+
+}
