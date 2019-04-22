@@ -265,7 +265,7 @@ void literal_display(const Literal *l);
 string choose_a_proposition()
 {
     string value = "";
-    cout << "Digite a variavel associada a sua proposicao" << endl;
+    cout << "Digite a variavel associada a sua proposicao:" << endl;
     cin >> value;
     return value;
 }
@@ -326,8 +326,8 @@ void report_error_1()
 
 void choose_a_option_1()
 {
-    cout << "Para inserir uma (P)roposicao digite P" << endl
-         << "Para inserir uma (E)xpressao digite E" << endl;
+    cout << "Para inserir uma (P)roposicao digite P." << endl
+         << "Para inserir uma (E)xpressao digite E." << endl;
 }
 
 void about_a_literal()
